@@ -10,8 +10,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-task: SonarCloudPrepare@1
-    inputs:
+- task: SonarCloudPrepare@1
+  inputs:
       SonarCloud: 'SonarCloud'
       organization: 'caligula'
       scannerMode: 'Other'
