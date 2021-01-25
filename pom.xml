@@ -97,13 +97,24 @@
           </execution>
         </executions>
       </plugin>
-
+             
       <plugin>
-        <!-- Code coverage plugin. -->
-        <!-- This sets up code coverage for the unit tests, the integration tests, -->
-        <!-- and the combined coverage of both. -->
-        <!-- After running a `mvn clean install`, open `target/site/jacoco-both/index.html` in a browser. -->
-        <groupId>org.jacoco</groupId>
+         <groupId>org.sonarsource.scanner.maven</groupId>
+                  <artifactId>sonar-maven-plugin</artifactId>
+                           <version>${sonar.version}</version>
+                           <executions>
+                                    <execution>
+                                             <phase>verify</phase>
+                                             <goals>
+                                                      <goal>sonar</goal>
+                                             </goals>
+                                    </execution>
+                            </executions>
+       </plugin>
+             
+             
+      <!--
+      <plugin>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${jacoco.plugin.version}</version>
         <executions>
@@ -135,7 +146,7 @@
             </configuration>
           </execution>
           <execution>
-            <!-- Combine the code coverage statistics generated for the unit and the integration tests. -->
+            <!-- Combine the code coverage statistics generated for the unit and the integration tests. 
             <id>jacoco-merge</id>
             <goals>
               <goal>merge</goal>
@@ -171,6 +182,7 @@
           </execution>
         </executions>
       </plugin>
+         -->
 
     </plugins>
   </build>
