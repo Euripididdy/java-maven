@@ -28,14 +28,13 @@ steps:
   inputs:
     SonarCloud: 'SonarCloud'
     organization: 'caligula'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'Euripididdy_java-maven'
-    cliProjectName: 'testscan'
-    cliSources: 'SonarCloud'
+    scannerMode: 'Other'
     # Additional properties that will be passed to the scanner,
     # Put one key=value per line, example:
     # sonar.exclusions=**/*.bin
+    extraProperties: |
+      sonar.projectKey=Euripididdy_java-maven
+      sonar.projectName=Sample Maven project with Azure DevOps
       #sonar.coverage.jacoco.xmlReportPaths=CCReport43F6D5EF/jacoco.xml
       # Initial behavior of Maven task is that the SonarScanner uses information contained in Maven
       # object model to provide smart defaults for most of the standard analysis parameters.
