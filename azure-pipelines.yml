@@ -56,7 +56,6 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
-    codeCoverageToolOption: 'JaCoCo'
     testResultsFiles: '**/TEST-*.xml'
     goals: 'verify'
 
