@@ -32,7 +32,7 @@ steps:
     configMode: 'manual'
     cliProjectKey: 'Euripididdy_java-maven'
     cliProjectName: 'testscan'
-    cliSources: '.': 'SonarCloud'
+    cliSources: 'SonarCloud'
     # Additional properties that will be passed to the scanner,
     # Put one key=value per line, example:
     # sonar.exclusions=**/*.bin
