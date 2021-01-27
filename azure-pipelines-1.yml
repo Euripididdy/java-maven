@@ -10,13 +10,24 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarCloud'
+    organization: 'caligula'
+    scannerMode: Other
+    extraProperties: |
+      sonar.projectKey=Euripididdy_java-maven
+      sonar.projectName=Sample Maven project with Azure DevOps
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
+    jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: latest
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
