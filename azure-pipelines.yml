@@ -45,7 +45,7 @@ steps:
   displayName: 'Execute Maven goal'
   inputs:
     mavenPomFile: 'pom.xml'
-    options: '-Dmaven.test.failure.ignore=true'
+#    options: '-Dmaven.test.failure.ignore=true'
     mavenOptions: '-Xmx3072m'
     mavenVersionOption: 'Default'
     javaHomeOption: 'JDKVersion'
@@ -58,6 +58,7 @@ steps:
     sqMavenPluginVersionChoice: 'latest'
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'verify'
+
 
 
 # Uncomment the next task to wait until SonarCloud processing has
